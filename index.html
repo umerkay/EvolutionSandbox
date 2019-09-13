@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+    <script src="https://cdn.jsdelivr.net/gh/umerkk164/needless-library@master/needless.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='output2'></div>
+    <div class="centerfull">
+        <!-- <h1>Evolution Simulation</h1> -->
+        <div class="cardholder">
+            <div class="cardholdersub">
+                <div>
+                    <div class="card" id="1">
+                        <img src="one.png" alt="" srcset="" width="75%">
+                        <div>
+                            <div class="title">Evolution Simulation 1/5</div>
+                            <div class="body">Simulation of agents with intelligent autonomous behaviours in a physical
+                                world, allowing survival of only the fittest. Read the next few cards to understand some
+                                of the mechanics and reach a conclusion.</div>
+                        </div>
+                        <button class="btn next">Next</button>
+                        <a href="/sim.html" class="skip">skip intro</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" id="2">
+                        <img src="two.png" alt="" srcset="" width="75%">
+                        <div>
+                            <div class="title">Autonomy 2/5</div>
+                            <div class="body">All agents on the screen percieve their surroundings and take actions
+                                accoridng to the inputs. For example, if they are alone they will find peers to be with
+                                and if they are too crowded into each other they will try and seperate.</div>
+                        </div>
+                        <button class="btn next">Next</button>
+                        <a href="/sim.html" class="skip">skip intro</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" id="3">
+                        <img src="three.png" alt="" srcset="" width="100%">
+                        <div>
+                            <div class="title">Survival 3/5</div>
+                            <div class="body">Agents have hunger saturation, decaying randomly. If
+                                hungry, agents will stroll out looking for food that they prefer. Food preferences are
+                                coded into the genes randomly, and shown as a colored circle for each agent.</div>
+                        </div>
+                        <button class="btn next">Next</button>
+                        <a href="/sim.html" class="skip">skip intro</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" id="4">
+                        <img src="four.png" alt="" srcset="" width="75%">
+                        <div>
+                            <div class="title">Evolution! 4/5</div>
+                            <div class="body">Overtime the fittest genes will survive. Survivors will pass on their
+                                genes as they reproduce, sometimes with mutations. Eventually the simulation will only
+                                contain the fittest genes. Can they evolve into immortality?</div>
+                        </div>
+                        <button class="btn next">Next</button>
+                        <a href="/sim.html" class="skip">skip intro</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" id="5">
+                        <img src="five.png" alt="" srcset="" width="75%">
+                        <div>
+                            <div class="title">Sandbox 5/5</div>
+                            <div class="body">Many of the variables in this simulation can be changed. It is interesting
+                                to observe how slight changes in the starting conditions yield varying results. A
+                                toolbox is included to allow you to tweak variables and play around.</div>
+                        </div>
+                        <a class="btn next" href="/sim.html">Start</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="task.js"></script>
+<script src="shapes.js"></script>
+<script src="quad tree.js"></script>
+<script src="particle.js"></script>
+<script src="agent.js"></script>
+<script src="sketchforhome.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    let currentCard = 1;
+    const getCurrCard = () => $('.card#' + currentCard);
+    $('.next').on('click', () => {
+        getCurrCard().animate({ opacity: 0 });
+        $('.cardholder').animate({ scrollLeft: $('.cardholder').scrollLeft() + 700 }, 500);
+        currentCard++;
+    });
+</script>
+
+</html>

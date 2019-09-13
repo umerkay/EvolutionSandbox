@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+#output {
+    height: 100vh;
+    width: 100vw;
+}
+
+#toolbox {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 400px;
+    height: 100vh;
+}
+
+#toolbox .body {
+    overflow: auto;
+    padding: 1rem;
+    height: 100%;
+    /* resize: vertical; */
+    border: 2px solid none;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0.3;
+    color: black;
+    transition-duration: 300ms;
+    /* transition-delay: 1000ms; */
+    /* font-weight: bold; */
+    /* transition: visibility 0s, height 0.3s ease-in, opacity 0.4s ease-out; */
+    padding-bottom: 5rem;
+}
+
+#toolbox:hover .body {
+    /* background-color: rgba(255, 255, 255, 1); */
+    opacity: 1;
+    /* transition-delay: 1ms; */
+}
+
+.heading {
+    font-weight: bold;
+}
+
+div[title]::before {
+    content: "?";
+    width: 10px;
+    margin-right: 10px;
+    height: 100%;
+    background-color: #eee;
+    padding: 5px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    #toolbox {
+        width: 100vw;
+    }
+    #toolbox .head {
+        padding: 0.25rem;
+    }
+    #toolbox .body {
+        opacity: 1;
+        height: 100vh !important;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px black;
+    }
+    .option label {
+        flex: unset !important;
+    }
+}
+
+#toolbox .body>* {
+    animation: fadein 300ms;
+}
+
+#toolbox.minimise .body {
+    display: none;
+    /* transition: visibility 0.3s, height 0.3s ease-in, opacity 0.4s ease-in; */
+    /* visibility: hidden; */
+    /* height: 0; */
+    /* opacity: 0; */
+}
+
+#toolbox.minimise {
+    height: auto;
+}
+
+@keyframes fadein {
+    from {
+        transform: translateY(-3rem);
+    }
+}
+
+#toolbox.minimise .minimisebtn {
+    transform: rotate(-90deg);
+}
+
+#toolbox .head {
+    user-select: none;
+    padding: 0.75rem;
+    background-color: black;
+    color: white;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+}
+
+#toolbox .body div.main {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.resetbtncontainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+    padding: 1rem;
+    transition-duration: 300ms;
+}
+
+.minimisebtncontainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.minimisebtncontainer>* {
+    margin: 0rem 0.25rem;
+}
+
+.btn {
+    background-color: transparent;
+    color: white;
+    font-weight: 200;
+    cursor: pointer;
+    border: none;
+    /* font-size: 1.em; */
+}
+
+.resetbtncontainer:active {
+    transform: rotate(-360deg);
+    transition-duration: 0ms;
+}
+
+.minimisebtn {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7.5px solid white;
+    transition-duration: 200ms;
+}
+
+.option {
+    display: flex;
+    border-bottom: 1px dotted black;
+    padding: 0.5rem 0rem;
+    align-items: center;
+}
+
+.option label {
+    margin-right: 0.5rem;
+    flex: 1;
+}
+
+
+
+
+
+#output2 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;    
+}
+
+.centerfull {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.cardholder {
+    width: 700px;
+    overflow: auto;
+}
+.cardholder::-webkit-scrollbar { width: 0 !important }
+
+.cardholdersub {
+    display: flex;
+}
+
+.card img {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+.card {
+    min-width: 600px;
+    height: 500px;
+    margin: 50px;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    background-color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 2.5rem;
+    /* display: none; */
+}
+
+a {
+    /* text-decoration: none; */
+    color: inherit;
+}
+
+.card * {
+    font-family: Raleway;
+}
+
+.card .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card .body {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card .btn {
+    background-color: #004cff;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+
+    transition-duration: 200ms;
+    align-self: flex-end;
+    text-decoration: none;
+
+}
+
+.card .btn:hover {
+    background-color: #0044e2;
+}
