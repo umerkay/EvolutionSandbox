@@ -190,6 +190,20 @@ div[title]::before {
     position: absolute;    
 }
 
+.links {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    z-index: 3;
+}
+
+.links > .btn {
+    margin: 0rem 0.5rem;
+    font-size: 1.25rem !important;
+}
+
 .centerfull {
     position: absolute;
     width: 100vw;
@@ -198,6 +212,7 @@ div[title]::before {
     justify-content: center;
     height: 100vh;
     flex-direction: column;
+    /* display: none; */
 }
 
 .cardholder {
@@ -252,7 +267,7 @@ a {
     margin-bottom: 1rem;
 }
 
-.card .btn {
+.card .btn, .links .btn {
     background-color: #004cff;
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
@@ -264,6 +279,6 @@ a {
 
 }
 
-.card .btn:hover {
+.card .btn:hover, .links .btn:hover {
     background-color: #0044e2;
 }
